@@ -2,7 +2,7 @@ FROM quay.io/sporkmonger/secure-bootstrap
 MAINTAINER Bob Aman <bob@sporkmonger.com>
 
 RUN apk add --update gcc g++ libgcc make musl-dev libc-dev \
-  linux-headers libffi-dev git go go-tools && \
+  linux-headers libffi-dev git mercurial go go-tools && \
   rm -rf /var/cache/apk/*
 
 RUN mkdir -p /go/src && \
