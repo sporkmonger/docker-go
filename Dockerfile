@@ -14,4 +14,6 @@ ENV GOPATH /go
 ENV GOLANG_VERSION 1.4.2
 WORKDIR /go
 
+RUN go get github.com/tools/godep && go install github.com/tools/godep
+
 CMD [ "/bin/bash" ]
