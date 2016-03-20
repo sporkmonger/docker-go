@@ -16,7 +16,4 @@ WORKDIR /go
 
 RUN go get github.com/tools/godep && go install github.com/tools/godep
 
-# Make sure everything is up-to-date
-RUN /opt/bin/cveck
-
 CMD [ "/bin/bash" ]
