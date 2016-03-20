@@ -11,9 +11,11 @@ RUN mkdir -p /go/src && \
 
 ENV PATH /go/bin:/usr/src/go/bin:$PATH
 ENV GOPATH /go
-ENV GOLANG_VERSION 1.4.2
+ENV GOLANG_VERSION 1.5.3
 WORKDIR /go
 
-RUN go get github.com/tools/godep && go install github.com/tools/godep
+RUN (go version | grep $GOLANG_VERSION) && \
+  go get github.com/tools/godep && \
+  go install github.com/tools/godep
 
 CMD [ "/bin/bash" ]
